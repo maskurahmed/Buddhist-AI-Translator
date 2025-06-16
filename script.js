@@ -919,10 +919,33 @@ function clearSpeechHighlight() {
     }
 }
 
+// 增强的HTML转义函数，防止XSS攻击
 function escapeHtml(text) {
+    if (!text || typeof text !== 'string') {
+        return '';
+    }
+    
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// 输入内容安全验证
+function validateInput(text) {
+    // 移除潜在的恶意脚本标签
+    const dangerousPatterns = [
+        /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+        /<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi,
+        /javascript:/gi,
+        /on\w+\s*=/gi
+    ];
+    
+    let cleanText = text;
+    dangerousPatterns.forEach(pattern => {
+        cleanText = cleanText.replace(pattern, '');
+    });
+    
+    return cleanText.trim();
 }
 
 function getVoiceLang(langCode) {
@@ -1009,10 +1032,16 @@ function selectBestVoiceForLanguage(langCode) {
 }
 
 async function handleTranslate() {
-    const sourceText = sourceTextArea.value.trim();
-    if (!sourceText) {
+    const rawText = sourceTextArea.value.trim();
+    if (!rawText) {
         showMessage('请输入要翻译的文本', 'warning');
         return;
+    }
+    
+    // 安全验证用户输入
+    const sourceText = validateInput(rawText);
+    if (sourceText !== rawText) {
+        showMessage('检测到不安全内容，已自动清理', 'warning');
     }
     
     const sourceLang = sourceSelect.value;
