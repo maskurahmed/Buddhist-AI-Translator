@@ -122,13 +122,33 @@
 
 ## 🚀 快速开始
 
+### 🔑 API密钥配置
+
+在使用翻译功能之前，您需要配置DeepSeek API密钥：
+
+1. **获取API密钥**
+   - 访问 [DeepSeek开放平台](https://platform.deepseek.com)
+   - 注册账号并登录
+   - 在API密钥管理页面创建新的API密钥
+
+2. **配置API密钥**
+   - 打开翻译器页面
+   - 点击右上角的设置按钮（⚙️图标）
+   - 在弹出的对话框中输入您的API密钥
+   - 点击"保存"按钮
+
+3. **安全说明**
+   - API密钥会安全地保存在您的浏览器本地存储中
+   - 不会发送到任何第三方服务器
+   - 清除浏览器数据会删除保存的密钥
+
 ### 在线使用
 直接在浏览器中打开 `index.html` 文件即可开始使用，无需安装任何依赖。
 
 ### 本地部署
 ```bash
 # 克隆项目
-git clone [项目地址]
+git clone https://github.com/[your-username]/buddhist-ai-translator.git
 
 # 进入项目目录
 cd buddhist-ai-translator

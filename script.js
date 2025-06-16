@@ -1309,19 +1309,31 @@ function saveApiKey() {
 }
 
 function checkApiKeyStatus() {
-    const apiSettingsBtn = document.getElementById('api-settings-btn');
+    const apiConfigBtn = document.getElementById('api-settings-btn');
+    const apiStatusText = document.getElementById('api-status-text');
+    const apiStatusIndicator = document.getElementById('api-status-indicator');
     
     if (API_CONFIG.apiKey) {
-        apiSettingsBtn.style.color = '#28a745'; // 绿色表示已配置
-        apiSettingsBtn.title = 'API已配置 (点击修改)';
-    } else {
-        apiSettingsBtn.style.color = '#dc3545'; // 红色表示未配置
-        apiSettingsBtn.title = 'API未配置 (点击设置)';
+        // API已配置状态
+        apiConfigBtn.classList.add('configured');
+        apiConfigBtn.innerHTML = '<i class="fas fa-check-circle"></i><span>API已配置</span>';
+        apiConfigBtn.title = 'API已配置，点击修改';
         
-        // 如果没有API密钥，自动显示设置对话框
+        apiStatusText.textContent = 'API已配置';
+        apiStatusIndicator.classList.add('connected');
+    } else {
+        // API未配置状态
+        apiConfigBtn.classList.remove('configured');
+        apiConfigBtn.innerHTML = '<i class="fas fa-key"></i><span>配置API</span>';
+        apiConfigBtn.title = '点击配置DeepSeek API密钥';
+        
+        apiStatusText.textContent = 'API未配置';
+        apiStatusIndicator.classList.remove('connected');
+        
+        // 如果没有API密钥，延迟显示提示
         setTimeout(() => {
             showMessage('请先配置DeepSeek API密钥才能使用翻译功能', 'warning');
-        }, 1000);
+        }, 1500);
     }
 }
 
