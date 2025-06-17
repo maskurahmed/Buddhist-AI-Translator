@@ -1,5 +1,15 @@
 # 慧译通 - 佛教AI翻译器
 
+[![GitHub Stars](https://img.shields.io/github/stars/xr843/Buddhist-AI-Translator?style=for-the-badge&logo=github)](https://github.com/xr843/Buddhist-AI-Translator)
+[![GitHub Forks](https://img.shields.io/github/forks/xr843/Buddhist-AI-Translator?style=for-the-badge&logo=github)](https://github.com/xr843/Buddhist-AI-Translator)
+[![GitHub Issues](https://img.shields.io/github/issues/xr843/Buddhist-AI-Translator?style=for-the-badge&logo=github)](https://github.com/xr843/Buddhist-AI-Translator/issues)
+[![License](https://img.shields.io/github/license/xr843/Buddhist-AI-Translator?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=firefox)](https://xr843.github.io/Buddhist-AI-Translator)
+
+> 🙏 **专业的佛教文献AI翻译平台** - 运用现代AI技术促进佛法学术研究与个人修行实践
+
+[🌐 在线体验](https://xr843.github.io/Buddhist-AI-Translator) | [📖 使用指南](#🚀-快速开始) | [🤝 参与贡献](#🤝-开源协作) | [💬 问题反馈](https://github.com/xr843/Buddhist-AI-Translator/issues)
+
 ## 📸 项目展示
 
 ![项目主界面](image/README/1749601583838.png)
